@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wichtelant</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li id="navbar-list">Wichtelliste</li>
+                <li id="navbar-add">Wichtel hinzufügen</li>
+                <li id="navbar-email">Email einrichten</li>
+                <li id="navbar-draw">Auslosen!</li>
+            </ul>
+        </div>
+
+        <div class="notifications" style="display:none" id="notifications"></div>
+
+        <div class="box" id="box-list" style="display:none">
+            <h1>Wichtelliste</h1>
+
+            <select id="list"></select>
+        </div>
+
+        <div class="box" id="box-details" style="display:none">
+            <h1>Details</h1>
+
+            <form id="details-form">
+                <label for="details-name">Name</label>
+                <input type="text" class="field" id="details-name" required>
+    
+                <label for="details-email">Email</label>
+                <input type="email" class="field" id="details-email" required>
+    
+                <label for="details-candidates">Auslosbare</label>
+                <div class="checkbox-list" id="details-candidates"></div>
+    
+                <label for="details-wishlist">Wunschliste</label>
+                <textarea id="details-wishlist" class="field" required></textarea>
+                
+                <input type="submit" class="button" id="details-button" value="Speichern">
+            </form>
+        </div>
+
+        <div class="box" id="box-add" style="display:none">
+            <h1>Wichtel hinzufügen</h1>
+
+            <form id="add-form">
+                <label for="add-name">Name</label>
+                <input type="text" class="field" id="add-name" required autofocus>
+    
+                <label for="add-email">Email</label>
+                <input type="email" class="field" id="add-email" required>
+    
+                <label for="add-wishlist">Wunschliste</label>
+                <textarea id="add-wishlist" class="field" required></textarea>
+    
+                <input type="submit" class="button" id="add-button" value="Hinzufügen">
+            </form>
+        </div>
+
+        <div class="box" id="box-email">
+            <h1>Email einrichten</h1>
+
+            <form id="email-form" method="POST">
+                <label for="email-host">Host</label>
+                <input type="text" class="field" value="securesmtp.t-online.de" name="host" id="email-host" required autofocus>
+
+                <label for="email-port">Port</label>
+                <input type="number" class="field" value="465" name="port" id="email-port" required>
+
+                <label for="email-connections">max. Verbindungen</label>
+                <input type="number" class="field" value="3" name="connections" id="email-connections" required>
+
+                <label for="email-rate">Email-Sende-Frequenz</label>
+                <input type="number" class="field" value="1" name="rate" id="email-rate" required>
+
+                <label for="email-options">Optionen</label>
+                <div class="checkbox-list" id="email-options">
+                    <input type="checkbox" checked="true" name="pool" id="email-pool">pool<br>
+                    <input type="checkbox" checked="true" name="secure" id="email-secure">secure<br>
+                    <input type="checkbox" name="reject" id="email-reject">reject unauthorized<br>
+                </div>
+
+                <label for="email-sender">Email</label>
+                <input type="email" class="field" name="sender" id="email-sender" required>
+
+                <label for="email-user">User</label>
+                <input type="text" class="field" name="user" id="email-user" required>
+
+                <label for="email-password">Passwort</label>
+                <input type="password" class="field" name="password" id="email-password" required>
+
+                <input type="submit" class="button" id="email-button" value="Einrichten">
+            </form>
+        </div>
+
+        <script src="../views/index.js"></script>
+    </body>
+</html>
