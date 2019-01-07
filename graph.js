@@ -83,7 +83,7 @@ function findHamiltonians(graph) {
 function getRandomHamiltonian(graph) {
     const hamiltonians = findHamiltonians(graph);
 
-    if (hamiltonians.length == 0) {
+    if (hamiltonians.length === 0) {
         return [];
     }
 

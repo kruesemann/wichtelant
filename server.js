@@ -40,6 +40,8 @@ app.post("/email", function(req, res) {
             rateLimit: 1
         };
         sender = fields.sender;
+
+        if (transporter) transporter.close();
     
         transporter = nodemailer.createTransport(poolConfig);
     
@@ -65,6 +67,11 @@ app.post("/draw", parser, function(req, res) {
         return;
     }
     const hamiltonian = graph.draw(data);
+
+    if (!hamiltonian.length) {
+        sendStatus(res, true, "Zu viele Einschränkungen bei den Auslosbaren, keine Auslosung möglich");
+        return;
+    }
 
     const messages = [];
     for (let i = 0; i < hamiltonian.length; i++) {
