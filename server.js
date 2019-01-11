@@ -82,7 +82,7 @@ app.post("/draw", parser, function(req, res) {
             text: `
 Hallo ${data[hamiltonian[i]].name},
 
-dein Wichtel ist ${data[hamiltonian[(i + 1) % hamiltonian.length]].name}!
+du bist der Wichtel von ${data[hamiltonian[(i + 1) % hamiltonian.length]].name}!
 ${data[hamiltonian[(i + 1) % hamiltonian.length]].name} wünscht sich:
 
 ${data[hamiltonian[(i + 1) % hamiltonian.length]].wishlist}
